@@ -5,7 +5,11 @@
   <template>
     <h2>Maria's Amazing Calculator</h2>
     <input id="calculation"></input>
-    <table>
+    <table> 
+      <tr>
+        <td><button on-click="{{addToCalculation}}" value="(">(</button></td>
+        <td><button on-click="{{addToCalculation}}" value=")">)</button></td>
+      </tr>
       <tr>
         <td><button on-click="{{addToCalculation}}" value="7">7</button></td>
         <td><button on-click="{{addToCalculation}}" value="8">8</button></td>
