@@ -1,7 +1,40 @@
-<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="stylesheet" type="text/css" href="calculator.css">
 
-<polymer-element name="calculator-element" noscript>
+<polymer-element name="maria-calculator" attributes="theme">
   <template>
-    <span>Hello from <b>Calculator</b>. This is my Shadow DOM.</span>
+    <h2>Maria's Amazing Calculator</h2>
+    <table>
+      <tr>
+        <td><button>7</button></td>
+        <td><button>8</button></td>
+        <td><button>9</button></td>
+        <td><button>&#8730;</button></td>
+      </tr>
+      <tr>
+        <td><button>4</button></td>
+        <td><button>5</button></td>
+        <td><button>6</button></td>
+        <td><button>&#215;</button></td>
+        <td><button>&#247;</button></td>
+      </tr>
+      <tr>
+        <td><button>1</button></td>
+        <td><button>2</button></td>
+        <td><button>3</button></td>
+        <td><button>&#8722;</button></td>
+        <td><button>+</button></td>
+      </tr>
+      <tr>
+        <td><button>0</button></td>
+        <td></td>
+        <td></td>
+        <td><button>=</button></td>
+        <td><button>Clear</button></td>
+      </tr>
+    </table>
+    <input></input>
+    <button on-click="{{buttonClick}}">Submit</button>
   </template>
+  <script src="calculator.js"></script>
 </polymer-element>
