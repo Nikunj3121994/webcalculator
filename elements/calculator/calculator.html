@@ -4,37 +4,36 @@
 <polymer-element name="maria-calculator" attributes="theme">
   <template>
     <h2>Maria's Amazing Calculator</h2>
+    <input id="calculation"></input>
     <table>
       <tr>
-        <td><button>7</button></td>
-        <td><button>8</button></td>
-        <td><button>9</button></td>
-        <td><button>&#8730;</button></td>
+        <td><button on-click="{{addToCalculation}}" value="7">7</button></td>
+        <td><button on-click="{{addToCalculation}}" value="8">8</button></td>
+        <td><button on-click="{{addToCalculation}}" value="9">9</button></td>
+        <td><button on-click="{{addToCalculation}}" value="sqrt">&#8730;</button></td>
       </tr>
       <tr>
-        <td><button>4</button></td>
-        <td><button>5</button></td>
-        <td><button>6</button></td>
-        <td><button>&#215;</button></td>
-        <td><button>&#247;</button></td>
+        <td><button on-click="{{addToCalculation}}" value="4">4</button></td>
+        <td><button on-click="{{addToCalculation}}" value="5">5</button></td>
+        <td><button on-click="{{addToCalculation}}" value="6">6</button></td>
+        <td><button on-click="{{addToCalculation}}" value="multiply">&#215;</button></td>
+        <td><button on-click="{{addToCalculation}}" value="divide">&#247;</button></td>
       </tr>
       <tr>
-        <td><button>1</button></td>
-        <td><button>2</button></td>
-        <td><button>3</button></td>
-        <td><button>&#8722;</button></td>
-        <td><button>+</button></td>
+        <td><button on-click="{{addToCalculation}}" value="1">1</button></td>
+        <td><button on-click="{{addToCalculation}}" value="2">2</button></td>
+        <td><button on-click="{{addToCalculation}}" value="3">3</button></td>
+        <td><button on-click="{{addToCalculation}}" value="add">+</button></td>
+        <td><button on-click="{{addToCalculation}}" value="subtract">&#8722;</button></td>
       </tr>
       <tr>
-        <td><button>0</button></td>
+        <td><button on-click="{{addToCalculation}}" value="0">0</button></td>
         <td></td>
         <td></td>
-        <td><button>=</button></td>
-        <td><button>Clear</button></td>
+        <td><button on-click="{{calculate}}">=</button></td>
+        <td><button on-click="{{clearCalculation}}">Clear</button></td>
       </tr>
     </table>
-    <input></input>
-    <button on-click="{{buttonClick}}">Submit</button>
   </template>
   <script src="calculator.js"></script>
 </polymer-element>
