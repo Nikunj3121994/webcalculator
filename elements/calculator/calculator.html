@@ -3,11 +3,9 @@
 <polymer-element name="maria-calculator" attributes="theme calcWidth calcHeight">
   <template>
     <link rel="stylesheet" type="text/css" href="calculator.css">
-    <div id="main" class="{{theme}}" style="width:{{calcWidth}}px; height:{{calcHeight}}px;">
-
+    <div id="main" class="{{theme}}" style="width:{{calcWidth}}; height:{{calcHeight}};">
       <!-- Calculator Component -->
-      <h2>Calculator</h2>
-      <input id="calculation" type="text" value="{{currentVal}}"></input>
+      <div id="calculation" type="text" value="{{currentVal}}"></div>
       <div id="errors"></div>
       <table>
         <tr><template bind ref="calcBtn" repeat="{{firstRow}}"></template></tr>

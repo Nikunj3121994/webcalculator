@@ -84,7 +84,7 @@ Polymer({
              {},
              {},
              {val: "=", displayedVal: "="},
-             {val: "clear", displayedVal: "Clear"}],
+             {val: "clear", displayedVal: "CL"}],
   // - If the user clicks on the "clear" or "=" button, then either clear
   //   the display or run the calculation. Otherwise, update the current
   //   calculation using the button's value.
@@ -114,11 +114,11 @@ Polymer({
   // - Uses Polymer's automatic node-finding (this.$.X) to update
   // input field with new calculation.
   updateDisplay: function(calculation) {
-    this.$.calculation.value = this.reformatCalculation(calculation);
+    this.$.calculation.innerHTML = this.reformatCalculation(calculation);
   },
   // - Clear 'input' field.
   clearDisplay: function() {
-    this.$.calculation.value = "";
+    this.$.calculation.innerHTML = "";
   },
   // - Format calculation for display.
   reformatCalculation: function(calculation) {
@@ -132,6 +132,6 @@ Polymer({
   // - Clear error messages.
   clearError: function() {
     this.$.errors.innerHTML = "";
-  }
+  },
 });
 
