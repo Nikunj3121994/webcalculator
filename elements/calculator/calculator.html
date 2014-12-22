@@ -5,18 +5,10 @@
     <link rel="stylesheet" type="text/css" href="calculator.css">
     <div id="main" class="{{theme}}" style="width:{{calcWidth}}px; height:{{calcHeight}}px;">
 
-      <!-- Calculator Button Template -->
-      <template id="calcBtn">
-        <td>
-          <template if="{{val}}">
-            <button on-click="{{buttonCallback}}" value="{{val}}">{{displayedVal}}
-            </button>
-          </template>
-        </td>
-      </template>
-
+      <!-- Calculator Component -->
       <h2>Calculator</h2>
-      <input id="calculation"></input>
+      <input id="calculation" type="text"></input>
+      <div class="errors"></div>
       <table>
         <tr><template bind ref="calcBtn" repeat="{{firstRow}}"></template></tr>
         <tr><template bind ref="calcBtn" repeat="{{secondRow}}"></template></tr>
@@ -28,3 +20,14 @@
   </template>
   <script src="calculator.js"></script>
 </polymer-element>
+
+<!-- Calculator Button Template -->
+<template id="calcBtn">
+  <td>
+    <template if="{{val}}">
+      <button on-click="{{buttonCallback}}" value="{{val}}">
+        {{displayedVal}}
+      </button>
+    </template>
+  </td>
+</template>
