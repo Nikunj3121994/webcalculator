@@ -4,40 +4,25 @@
   <template>
     <link rel="stylesheet" type="text/css" href="calculator.css">
     <div id="main" class="{{theme}}" style="width:{{calcWidth}}px; height:{{calcHeight}}px;">
-      <h2>  Calculator</h2>
+
+      <!-- Calculator Button Template -->
+      <template id="calcBtn">
+        <td>
+          <template if="{{val}}">
+            <button on-click="{{buttonCallback}}" value="{{val}}">{{displayedVal}}
+            </button>
+          </template>
+        </td>
+      </template>
+
+      <h2>Calculator</h2>
       <input id="calculation"></input>
       <table>
-        <tr>
-          <td><button on-click="{{addToCalculation}}" value="(">(</button></td>
-          <td><button on-click="{{addToCalculation}}" value=")">)</button></td>
-        </tr>
-        <tr>
-          <td><button on-click="{{addToCalculation}}" value="7">7</button></td>
-          <td><button on-click="{{addToCalculation}}" value="8">8</button></td>
-          <td><button on-click="{{addToCalculation}}" value="9">9</button></td>
-          <td><button on-click="{{addToCalculation}}" value="sqrt">&#8730;</button></td>
-        </tr>
-        <tr>
-          <td><button on-click="{{addToCalculation}}" value="4">4</button></td>
-          <td><button on-click="{{addToCalculation}}" value="5">5</button></td>
-          <td><button on-click="{{addToCalculation}}" value="6">6</button></td>
-          <td><button on-click="{{addToCalculation}}" value="multiply">&#215;</button></td>
-          <td><button on-click="{{addToCalculation}}" value="divide">&#247;</button></td>
-        </tr>
-        <tr>
-          <td><button on-click="{{addToCalculation}}" value="1">1</button></td>
-          <td><button on-click="{{addToCalculation}}" value="2">2</button></td>
-          <td><button on-click="{{addToCalculation}}" value="3">3</button></td>
-          <td><button on-click="{{addToCalculation}}" value="add">+</button></td>
-          <td><button on-click="{{addToCalculation}}" value="subtract">&#8722;</button></td>
-        </tr>
-        <tr>
-          <td><button on-click="{{addToCalculation}}" value="0">0</button></td>
-          <td></td>
-          <td></td>
-          <td><button on-click="{{calculate}}">=</button></td>
-          <td><button on-click="{{clearCalculation}}">Clear</button></td>
-        </tr>
+        <tr><template bind ref="calcBtn" repeat="{{firstRow}}"></template></tr>
+        <tr><template bind ref="calcBtn" repeat="{{secondRow}}"></template></tr>
+        <tr><template bind ref="calcBtn" repeat="{{thirdRow}}"></template></tr>
+        <tr><template bind ref="calcBtn" repeat="{{fourthRow}}"></template></tr>
+        <tr><template bind ref="calcBtn" repeat="{{fifthRow}}"></template></tr>
       </table>
     </div>
   </template>
