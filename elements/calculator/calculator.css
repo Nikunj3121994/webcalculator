@@ -1,0 +1,23 @@
+#main {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#main input {
+  border-radius: 5px;
+}
+
+#main button {
+  border-radius: 2px;
+  margin: 0px;
+}
+
+.light {
+  color: black;
+  background-color: white;
+}
+
+.dark {
+  color: #00FF40;
+  background-color: #424242;
+}

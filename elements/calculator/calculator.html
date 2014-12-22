@@ -1,43 +1,45 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="stylesheet" type="text/css" href="calculator.css">
 
-<polymer-element name="maria-calculator" attributes="theme">
+<polymer-element name="maria-calculator" attributes="theme calcWidth calcHeight">
   <template>
-    <h2>Maria's Amazing Calculator</h2>
-    <input id="calculation"></input>
-    <table> 
-      <tr>
-        <td><button on-click="{{addToCalculation}}" value="(">(</button></td>
-        <td><button on-click="{{addToCalculation}}" value=")">)</button></td>
-      </tr>
-      <tr>
-        <td><button on-click="{{addToCalculation}}" value="7">7</button></td>
-        <td><button on-click="{{addToCalculation}}" value="8">8</button></td>
-        <td><button on-click="{{addToCalculation}}" value="9">9</button></td>
-        <td><button on-click="{{addToCalculation}}" value="sqrt">&#8730;</button></td>
-      </tr>
-      <tr>
-        <td><button on-click="{{addToCalculation}}" value="4">4</button></td>
-        <td><button on-click="{{addToCalculation}}" value="5">5</button></td>
-        <td><button on-click="{{addToCalculation}}" value="6">6</button></td>
-        <td><button on-click="{{addToCalculation}}" value="multiply">&#215;</button></td>
-        <td><button on-click="{{addToCalculation}}" value="divide">&#247;</button></td>
-      </tr>
-      <tr>
-        <td><button on-click="{{addToCalculation}}" value="1">1</button></td>
-        <td><button on-click="{{addToCalculation}}" value="2">2</button></td>
-        <td><button on-click="{{addToCalculation}}" value="3">3</button></td>
-        <td><button on-click="{{addToCalculation}}" value="add">+</button></td>
-        <td><button on-click="{{addToCalculation}}" value="subtract">&#8722;</button></td>
-      </tr>
-      <tr>
-        <td><button on-click="{{addToCalculation}}" value="0">0</button></td>
-        <td></td>
-        <td></td>
-        <td><button on-click="{{calculate}}">=</button></td>
-        <td><button on-click="{{clearCalculation}}">Clear</button></td>
-      </tr>
-    </table>
+    <link rel="stylesheet" type="text/css" href="calculator.css">
+    <div id="main" class="{{theme}}" style="width:{{calcWidth}}px; height:{{calcHeight}}px;">
+      <h2>  Calculator</h2>
+      <input id="calculation"></input>
+      <table>
+        <tr>
+          <td><button on-click="{{addToCalculation}}" value="(">(</button></td>
+          <td><button on-click="{{addToCalculation}}" value=")">)</button></td>
+        </tr>
+        <tr>
+          <td><button on-click="{{addToCalculation}}" value="7">7</button></td>
+          <td><button on-click="{{addToCalculation}}" value="8">8</button></td>
+          <td><button on-click="{{addToCalculation}}" value="9">9</button></td>
+          <td><button on-click="{{addToCalculation}}" value="sqrt">&#8730;</button></td>
+        </tr>
+        <tr>
+          <td><button on-click="{{addToCalculation}}" value="4">4</button></td>
+          <td><button on-click="{{addToCalculation}}" value="5">5</button></td>
+          <td><button on-click="{{addToCalculation}}" value="6">6</button></td>
+          <td><button on-click="{{addToCalculation}}" value="multiply">&#215;</button></td>
+          <td><button on-click="{{addToCalculation}}" value="divide">&#247;</button></td>
+        </tr>
+        <tr>
+          <td><button on-click="{{addToCalculation}}" value="1">1</button></td>
+          <td><button on-click="{{addToCalculation}}" value="2">2</button></td>
+          <td><button on-click="{{addToCalculation}}" value="3">3</button></td>
+          <td><button on-click="{{addToCalculation}}" value="add">+</button></td>
+          <td><button on-click="{{addToCalculation}}" value="subtract">&#8722;</button></td>
+        </tr>
+        <tr>
+          <td><button on-click="{{addToCalculation}}" value="0">0</button></td>
+          <td></td>
+          <td></td>
+          <td><button on-click="{{calculate}}">=</button></td>
+          <td><button on-click="{{clearCalculation}}">Clear</button></td>
+        </tr>
+      </table>
+    </div>
   </template>
   <script src="calculator.js"></script>
 </polymer-element>

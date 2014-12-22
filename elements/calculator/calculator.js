@@ -2,6 +2,18 @@ Polymer({
   ready: function () {
     this.currentCalculation = "";
   },
+  theme: {
+    value: "light",
+    reflect: true
+  },
+  calcWidth: {
+    value: "183",
+    reflect: true
+  },
+  calcHeight: {
+    value: "246",
+    reflect: true
+  },
   basicOperations: {
     'multiply': '*',
     'add': '+',
