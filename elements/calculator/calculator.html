@@ -7,8 +7,8 @@
 
       <!-- Calculator Component -->
       <h2>Calculator</h2>
-      <input id="calculation" type="text"></input>
-      <div class="errors"></div>
+      <input id="calculation" type="text" value="{{currentVal}}"></input>
+      <div id="errors"></div>
       <table>
         <tr><template bind ref="calcBtn" repeat="{{firstRow}}"></template></tr>
         <tr><template bind ref="calcBtn" repeat="{{secondRow}}"></template></tr>

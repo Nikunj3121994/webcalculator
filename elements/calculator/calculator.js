@@ -16,9 +16,13 @@ var calculator = {
   },
   // Evaluate current calculation.
   calculate: function () {
-    var temp = this.currentCalculation;
-    this.currentCalculation = eval(temp);
-    return this.currentCalculation;
+    try {
+      var temp = this.currentCalculation;
+      this.currentCalculation = eval(temp);
+      return this.currentCalculation;
+    } catch (error) {
+      throw error;
+    }
   },
   // Update the current calculation based on inputs.
   updateCalculation: function (buttonVal) {
@@ -57,7 +61,9 @@ Polymer({
     reflect: true
   },
   // BUTTONS:
-  // - Organize buttons as objects; display them with the 'calcBtn' template. //   Separate the displayed value from the actual value sent when the button //   is clicked. (e.g., √ vs "sqrt".)
+  // - Organize buttons as objects; display them with the 'calcBtn' template.
+  //   Separate the displayed value from the actual value sent when the
+  // is clicked. (e.g., √ vs "sqrt".)
   firstRow: [{val: "(", displayedVal: "(",},
               {val: ")", displayedVal: ")"}],
   secondRow: [{val: "7", displayedVal: "7"},
@@ -85,16 +91,21 @@ Polymer({
   buttonCallback: function(event, detail, sender) {
     var newToken = sender.value;
     var calculationToDisplay;
-    if (sender.value === "clear") {
-      this.calculator.refresh();
-      this.clearDisplay();
-    } else {
-      if (newToken === "=") {
-        calculationToDisplay = this.calculator.calculate();
+    try {
+      if (sender.value === "clear") {
+        this.calculator.refresh();
+        this.clearDisplay();
+        this.clearError();
       } else {
-        calculationToDisplay = this.calculator.updateCalculation(newToken);
+        if (newToken === "=") {
+          calculationToDisplay = this.calculator.calculate();
+        } else {
+          calculationToDisplay = this.calculator.updateCalculation(newToken);
+        }
+        this.updateDisplay(calculationToDisplay);
       }
-      this.updateDisplay(calculationToDisplay);
+    } catch (error) {
+      this.displayError();
     }
   },
   // Wire up Polymer component to "calculator" model.
@@ -113,5 +124,14 @@ Polymer({
   reformatCalculation: function(calculation) {
     return calculation.toString().replace("Math.sqrt(", "\u221A(")
   },
+  // ERRORS:
+  // - Display an error message for invalid calculations.
+  displayError: function() {
+    this.$.errors.innerHTML = "You entered an invalid calculation.";
+  },
+  // - Clear error messages.
+  clearError: function() {
+    this.$.errors.innerHTML = "";
+  }
 });
 
