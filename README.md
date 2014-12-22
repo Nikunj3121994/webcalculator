@@ -9,6 +9,10 @@ This web calculator is a Polymer component. To use it, include the following:
 * Supported Operations: The calculator can multiply, divide, find a square root, and clear its results.
 * Error Handling: The calculator displays an error message for invalid calculations (such as "3--9").
 
+### Demo:
+
+A demo is up at https://pacana-calculator.herokuapp.com/
+
 #### To Do:
 Given more time, I would add the following:
 * Scroll to end of calculator input: Calculator input just runs off the screen for long calculations (e.g., "9999999999999*44444"). I would hide the beginning of the input string and just display the last few digits.
